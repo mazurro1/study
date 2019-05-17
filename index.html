@@ -1,0 +1,377 @@
+﻿<style>
+
+.obrazek1 {
+
+background: url(images/1_011.png); 
+background-color: transparent; 
+height: 299; 
+width: 1200;
+display: block;
+background-attachment: local;
+}
+
+.obrazek2 {
+
+background: url(images/1_02.gif); 
+background-color: transparent; 
+height: 807; 
+width: 239;
+display: block;
+float: left;
+background-attachment: local;
+}
+
+.obrazek3 {
+
+background: url(images/1_031.png); 
+background-color: transparent; 
+height: 82; 
+width: 575;
+display: block;
+float: left;
+background-attachment: local;
+}
+
+.obrazek4 {
+
+background: url(images/1_04.gif); 
+background-color: transparent; 
+height: 807; 
+width: 30;
+display: block;
+float: left;
+background-attachment: local;
+}
+
+.obrazek5 {
+
+background: url(images/1_05.gif); 
+background-color: transparent; 
+height: 189; 
+width: 228;
+display: block;
+float: left;
+background-attachment: local;
+}
+
+.obrazek6 {
+
+background: url(images/1_06.gif); 
+background-color: transparent; 
+height: 807; 
+width: 132;
+display: block;
+float: left;
+background-attachment: local;
+}
+
+.obrazek7 {
+
+background: url(images/1_071.png); 
+background-color: transparent; 
+height: 727; 
+width: 575;
+display: block;
+float: left;
+margin-top: 58;
+background-attachment: local;
+}
+
+.obrazek8 {
+
+background: url(images/1_12.png); 
+background-color: transparent; 
+height: 618; 
+width: 356;
+display: block;
+float: left;
+margin-top: 108px;
+background-attachment: local;
+}
+
+.obrazek9 {
+
+background: url(images/1_09.gif); 
+background-color: transparent; 
+height: 120; 
+width: 1200;
+display: block;
+float: left;
+background-attachment: local;
+}
+
+.obrazek10 {
+
+background: url(images/1_10.gif); 
+background-color: transparent; 
+height: 30; 
+width: 1200;
+display: block;
+float: left;
+background-attachment: local;
+}
+
+.obrazek11 {
+
+background: url(images/1_11.gif); 
+background-color: transparent; 
+height: 133; 
+width: 1200;
+display: block;
+float: left;
+background-attachment: local;
+}
+
+.text
+{
+margin-left: 15px;
+margin-top: 10px;
+margin-right: 15px;
+color: #e3e3e3;
+font-size: 14px;
+}
+
+
+.text2
+{
+text-align: center;
+color: #e3e3e3;
+margin-top: 10px;
+}
+
+.obrazekmax
+{
+	max-height: 580px;
+	max-width: 515px;
+
+}
+
+
+html {
+  font-family: sans-serif;
+  
+}
+
+</style>
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >		
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<title>Wykrywarka zdjęć</title>
+</head>
+<body  style="background: #000000;">
+
+
+<div style="max-width:1200px; margin: 0 auto; ">
+	<div class="obrazek1">
+
+	</div>
+	<div class="obrazek2">
+		
+	</div>
+
+
+	<div class="obrazek3">
+		
+		<div class="obrazek7 ">	
+		<div class="text">
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="page">
+   
+    <div class="container">
+        
+        <div class="userInterface">
+           
+           Adres zdjęcia: <input type="text" name="inputImage" id="inputImage" value="Podaj adres obrazka." />
+            <button onclick="analyzeButtonClick()">Analizuj obrazek</button>
+            <br><br>
+
+            <div class="wrapper">
+<!--
+               <div class="jsonOutput">
+                    Informacje:
+                    <br><br>
+                    <textarea id="responseTextArea" class="UIInput"></textarea>
+                </div>-->
+
+                <div class="pad"></div>
+                <div class="imageDiv">
+                    Obrazek:<br>
+                    <span id="captionSpan"></span><br>
+                    <center><img id="sourceImage" class="obrazekmax" onerror="common.imageLoadError()"  /></center>
+                </div>
+            </div>
+
+		
+            <div class="subKeyDiv" style="display: none">
+                Subscription Key: 
+                <input 
+                    type="text" 
+                    class="subKeyInput" 
+                    name="subscriptionKeyInput" 
+                    id="subscriptionKeyInput" 
+                    onchange="common.subscriptionChange()" 
+                    value="46643f137b814108acff1a6b47404ae4" />
+                Subscription Region: 
+                <select name="subscriptionRegionSelect" id="subscriptionRegionSelect" onchange="common.subscriptionChange()">
+               
+                    <option selected value="westeurope">westeurope</option>
+
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+		</div>
+		</div>
+	</div>
+
+	<div class="obrazek4">
+		
+	</div>
+
+	<div class="obrazek5">
+		<div class="text">
+
+
+
+Program służący do wykrywania zdjęć erotycznych. Jeżeli zdjęcie zawiera treści nieodpowiednie to po analizie zdjęcia wyskoczy komunikat: "Erotyka: true", a jeżeli nie to "Erotyka: false". Dodatkowo aplikacja pokazuje jaki procent na tle erotycznym otrzymał obrazek.
+
+
+
+		</div>
+		<div class="obrazek8">
+		
+		</div>
+	</div>
+
+
+	<div class="obrazek9">
+		
+	</div>
+
+<div class="obrazek10">
+		
+	</div>
+
+
+<div class="obrazek11">
+	<div class="text2">
+		Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. 
+	</div>
+	</div>
+
+
+
+
+
+
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+
+function analyzeButtonClick() {
+
+    // Clear the display fields.
+    $("#sourceImage").attr("src", "#");
+    $("#responseTextArea").val("");
+    $("#captionSpan").text("");
+    
+    // Display the image.
+    var sourceImageUrl = $("#inputImage").val();
+    $("#sourceImage").attr("src", sourceImageUrl);
+    
+    AnalyzeImage(sourceImageUrl, $("#responseTextArea"), $("#captionSpan"));
+}
+
+
+
+
+function AnalyzeImage(sourceImageUrl, responseTextArea, captionSpan) {
+    var params = {
+        "visualFeatures": "Description, adult",
+        "details": "",
+        "language": "en",
+    };
+
+    $.ajax({
+        url: common.uriBasePreRegion + 
+             $("#subscriptionRegionSelect").val() + 
+             common.uriBasePostRegion + 
+             common.uriBaseAnalyze +
+             "?" + 
+             $.param(params),
+                    
+        // Request headers.
+        beforeSend: function(jqXHR){
+            jqXHR.setRequestHeader("Content-Type","application/json");
+            jqXHR.setRequestHeader("Ocp-Apim-Subscription-Key", 
+                encodeURIComponent($("#subscriptionKeyInput").val()));
+        },
+        
+        type: "POST",
+        
+        data: '{"url": ' + '"' + sourceImageUrl + '"}',
+    })
+    
+    .done(function(data) {
+
+        responseTextArea.val(JSON.stringify(data, null, 2));        
+		data.adult.adultScore
+
+
+       
+      if (data.description && data.description.captions) {
+            var caption = data.description.captions[0];
+            
+           if (caption.text && caption.confidence) {
+
+               captionSpan.text("Erotyka: " +  data.adult.isAdultContent + "." +
+                  " Erotyka - ocena: " + Math.round(data.adult.adultScore*100) + "%.");
+			}      
+        }
+    
+
+
+    })  
+    .fail(function(jqXHR, textStatus, errorThrown) {
+        var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
+        errorString += (jqXHR.responseText === "") ? "" : (jQuery.parseJSON(jqXHR.responseText).message) ? 
+            jQuery.parseJSON(jqXHR.responseText).message : jQuery.parseJSON(jqXHR.responseText).error.message;
+        
+        // Put the error JSON in the response textarea.
+        responseTextArea.val(JSON.stringify(jqXHR, null, 2));
+        
+        // Show the error message.
+        alert(errorString);
+    });
+}
+
+</script>
